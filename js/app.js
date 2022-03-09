@@ -7,6 +7,7 @@ const loadProducts = () => {
 
 // show all product in UI 
 const showProducts = (products) => {
+  //Got an error here and fixed
   for (const product of products) {
     const image = product.image;
     const div = document.createElement("div");
@@ -28,13 +29,14 @@ let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
-
+  //Got an error here and fixed
   updateTaxAndCharge();
   updateTotal();
   document.getElementById("total-Products").innerText = count;
 };
 
 const getInputValue = (id) => {
+  //Got an error here and fixed
   const elementField = document.getElementById(id);
   const element = elementField.innerText;
   const converted = parseInt(element);
@@ -57,6 +59,7 @@ const setInnerText = (id, value) => {
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
+  //Got an error here and fixed
   if (priceConverted < 200 && priceConverted > 0) {
     setInnerText("delivery-charge", 20);
     setInnerText("total-tax", priceConverted * 0.1);
@@ -67,6 +70,7 @@ const updateTaxAndCharge = () => {
     setInnerText("delivery-charge", 50);
     setInnerText("total-tax", priceConverted * 0.3);
   } else {
+    //Got an error here and fixed
     setInnerText("delivery-charge", 60);
     setInnerText("total-tax", priceConverted * 0.4);
   }
